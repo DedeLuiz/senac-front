@@ -1,5 +1,6 @@
 // CadastroPaciente.js
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 
 function CadastroPaciente() {
   return (
@@ -32,8 +33,8 @@ function CadastroPaciente() {
                 <option value="outro">Outro</option>
             </select>
                                   
-            <button type="submit">Cadastrar</button>
-            <button className="ficha-anamnese-button" type="button">Ficha Anamnese</button>
+            <button className="cadastro-paciente-container" type="button">Cadastrar</button>
+            <Link to="/ficha-anamnese" className="ficha-anamnese-button">Ficha Anamnese</Link>
         </form>
 
     </div>
