@@ -1,0 +1,71 @@
+/* Definição das cores */
+:root {
+  --primary-color: #0077c8; /* Azul primário do SENAC */
+  --secondary-color: #a7c9e0; /* Azul claro secundário */
+  --background-color: #f2f2f2; /* Cor de fundo */
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #F7941D;
+}
+
+/* Estilos para o layout do formulário */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaçamento entre os elementos */
+}
+
+/* Estilos para os rótulos */
+label {
+  margin-bottom: 5px;
+  width: 100px; /* Largura fixa para os rótulos */
+}
+
+/* Estilos para os inputs */
+input[type="datetime-local"],
+input[type="text"],
+select {
+  width: 200px; /* Largura fixa para inputs pequenos */
+  margin-bottom: 10px;
+}
+
+/* Estilos para o input de descrição */
+input[type="text"][name="descricao"] {
+  width: 200px; /* Largura inicial do input de descrição */
+  transition: width 0.3s ease; /* Transição suave */
+}
+
+input[type="text"][name="descricao"]:focus {
+  width: 400px; /* Largura expandida do input de descrição quando em foco */
+}
+
+
+/* Estilos para o botão de agendar */
+button[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+}

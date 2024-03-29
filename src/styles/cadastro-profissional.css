@@ -1,0 +1,50 @@
+/* Estilo do corpo do formulário */
+.profissional-container {
+    background: #ffffff; /* Cor de fundo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif; /* Fonte */
+  }
+  
+  /* Estilo das etiquetas (labels) */
+  .profissional-container label {
+    display: block; /* Um embaixo do outro */
+    margin-top: 10px; /* Espaçamento acima */
+  }
+  
+  /* Estilo dos inputs */
+  .profissional-container input,
+  .profissional-container select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white; /* Fundo branco */
+  }
+  
+  /* Estilo dos botões */
+  .profissional-container .button-container {
+    display: flex;
+    justify-content: center; /* Alinha botões no centro */
+    align-items: center; /* Alinha botões no centro */
+    margin-top: 20px;
+  }
+  
+  .profissional-container button {
+    margin: 10px; /* Espaçamento entre os botões */
+    background-color: #F7941D; /* Cor do botão */
+    color: white; /* Cor do texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Estilo específico para o botão de enviar */
+  .profissional-container button[type="submit"] {
+    background-color: #004A8D; /* Cor do botão */
+  }
+  

@@ -1,0 +1,32 @@
+body {
+    background-color: #f2f2f2; /* Cor de fundo */
+}
+
+label {
+    color: black; /* Fonte preta */
+    display: block; /* Exibir cada label em uma nova linha */
+}
+
+input {
+    background-color: white; /* Fundo branco */
+    color: black; /* Fonte preta */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 5px; /* Espaçamento interno */
+    margin-top: 5px; /* Espaçamento superior */
+    
+}
+
+button {
+    margin-top: 10px; /* Espaçamento superior */
+    background-color: #F7941D; /* Cor de fundo para o botão de cadastro profissional */
+    color: white; /* Cor da fonte para o botão de cadastro profissional */
+    padding: 10px 20px; /* Espaçamento interno (altura x largura) */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Alterar cursor para indicar que o elemento é clicável */
+}
+
+button[type="submit"] {
+    background-color: #004A8D; /* Cor de fundo para o botão de login */
+}

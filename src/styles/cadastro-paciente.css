@@ -1,0 +1,58 @@
+/* Estilos para a tela de cadastro de paciente */
+
+.paciente-container {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f2f2f2; /* Cor de fundo */
+}
+
+.cadastro-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.cadastro-container label {
+  display: block;
+  margin-top: 10px;
+}
+
+.cadastro-container input,
+.cadastro-container select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cadastro-container .button-container {
+  display: flex;
+  justify-content: flex-end; /* Alinha os botões à direita */
+  margin-top: 20px;
+}
+
+.cadastro-container button {
+  margin: 10px; /* Adiciona espaço entre os botões */
+  background-color: #f7941d; /* Cor do botão */
+  color: white;
+  padding: 10px 30px; /* Altera o tamanho do botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cadastro-container button[type="submit"] {
+  background-color: #004a8d; /* Cor do botão de envio */
+}
+
+.cadastro-container .button-container button {
+  padding: 10px 20px; /* Altera o tamanho do botão para corresponder ao laranja */
+}
