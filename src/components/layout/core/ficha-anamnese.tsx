@@ -7,13 +7,14 @@ function FichaAnamnese() {
 
                 <form>
                     <div>
-                        <title>
+                        
                         <b>
-                            Ficha De Anamnese &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <h1> Ficha De Anamnese </h1>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <label htmlFor="numero">Ficha N.º</label>
                             <input type="text" id="numero" />
                         </b>
-                        </title>
+                        
                         <p></p>
 
                         <div className="ficha-anamnese">
@@ -22,22 +23,26 @@ function FichaAnamnese() {
                                 <input type="text" id="nome" />
                             </b>
                         </div>
-                        <p>
-                            <label htmlFor="ender">Endereço:</label>
-                            <input type="text" id="ender" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <label htmlFor="num">N.º</label>
-                            <input type="text" id="num" />
+                        <p> 
+                            <b>
+                                <label htmlFor="ender">Endereço:</label>
+                                <input type="text" id="ender" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label htmlFor="num">N.º</label>
+                                <input type="text" id="num" />
+                            </b>    
                         </p>
                         <p>
-                            <label htmlFor="cidade">Cidade:</label>
-                            <input type="text" id="cidade" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <label htmlFor="cep">Cep:</label>
-                            <input type="text" id="cep" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <label htmlFor="data">Data de nascimento:</label>
-                            <input type="date" id="data" />
+                            <b>
+                                <label htmlFor="cidade">Cidade:</label>
+                                <input type="text" id="cidade" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label htmlFor="cep">Cep:</label>
+                                <input type="text" id="cep" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label htmlFor="data">Data de nascimento:</label>
+                                <input type="date" id="data" />
+                            </b>    
                         </p>
 
                         <b>Estado civil:</b>
@@ -75,9 +80,10 @@ function FichaAnamnese() {
                             </p>
                         </b>
 
-                        <p>
-                            <label htmlFor="prof">Profissão:</label>
-                            <input type="text" id="prof" />
+                        <p> <b>
+                                <label htmlFor="prof">Profissão:</label>
+                                <input type="text" id="prof" />
+                            </b>    
                         </p>
 
                         <b>Posição em qual trabalha:</b>
@@ -385,12 +391,9 @@ function FichaAnamnese() {
                                                         <input type="checkbox" id="teste2n" />
                                                         <p>
 
-                                                        <div className="ficha-anamnese-projeto" style={{ textAlign: "center" }}>
-                                                            <p>
-                                                            <a href="home.html"><button type="button" style={{ backgroundColor: "#004A8D", color: "white", padding: "10px 20px", fontSize: "20px" }}>Enviar Ficha</button></a>
-                                                            </p>
-                                                            <a href="home_projeto.html"><button type="button" style={{ backgroundColor: "#F7941D", color: "white", padding: "10px 20px", fontSize: "20px" }}>Cancelar Ficha</button></a>
-                                                        </div>
+                                                        <button className="cadastro-paciente-container" type="button">Salvar</button>
+                                                        <button className="cadastro-paciente-container" type="button">Cancelar Ficha</button>
+
                             </p>                            
                     </div>
 

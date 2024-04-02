@@ -1,12 +1,79 @@
 body {
-    background: #f2f2f2;
-    box-shadow: 0 0 10px rgba(240, 0, 0, 0.2);
-  }
-  
-  form {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
+  --background-color: #f2f2f2; /* Cor de fundo */
+  background-color: var(--background-color);
+}
+
+form {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form div {
+  list-style: none; /* Colocar em forma de lista */
+}
+
+form title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: bold;
+  display: inline-block;
+  width: 200px;
+}
+
+form input[type="text"][name="descricao"]:focus {
+  width: 400px; /* Largura expandida do input de descrição quando em foco */
+}
+
+form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="button"]:first-child {
+  background-color: #004a8d; /* Cor do botão de salvar */
+  color: white;
+}
+
+button[type="button"]:last-child {
+  background-color: #f7941d; /* Cor do botão de cancelar */
+  color: white;
+}
+
+.ficha-header {
+  position: absolute;
+  top: 20px; /* Distância do topo */
+  left: 20px; /* Distância da esquerda */
+}
+
+.label-input-container {
+  display: inline-block; /* Para os elementos ficarem em linha */
+}
+
+.label-input-container label {
+  display: inline-block; /* Para o label e o input ficarem na mesma linha */
+}
+
+.label-input-container input[type="text"] {
+  width: 100px; /* Largura inicial do input de Ficha N.º */
+}
+
+form input[type="text"][id="nome"],
+form input[type="text"][id="ender"],
+form input[type="text"][id="cidade"] {
+  transition: width 0.3s ease; /* Transição suave da largura */
+  width: 200px; /* Largura inicial dos inputs de nome, endereço e cidade */
+}
+
+form input[type="text"][id="nome"]:focus,
+form input[type="text"][id="ender"]:focus,
+form input[type="text"][id="cidade"]:focus {
+  width: 400px; /* Largura expandida dos inputs de nome, endereço e cidade */
+}
