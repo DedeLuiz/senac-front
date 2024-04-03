@@ -6,34 +6,41 @@
   font-family: Arial, sans-serif; /* Fonte */
   display: flex;
   flex-direction: column; /* Organiza os elementos em coluna */
+  border: 1px solid #ccc; /* Borda sólida */
 }
 
 /* Estilo das etiquetas (labels) */
 .consulta-container form label {
   color: black; /* Cor preta */
   margin-bottom: 10px; /* Espaçamento abaixo */
-  width: 200px; /* Largura fixa para as etiquetas */
 }
 
 /* Estilo dos inputs */
-.consulta-container form input {
-  flex: 1; /* Ocupa o espaço restante */
+.consulta-container form input[type="text"] {
   padding: 10px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: white; /* Fundo branco */
   color: black; /* Cor da fonte */
+  transition: width 0.3s ease; /* Transição suave da largura */
+  width: 200px; /* Largura inicial dos inputs */
 }
 
-/* Estilo dos botões */
+/* Estilo dos inputs quando em foco */
+.consulta-container form input[type="text"]:focus {
+  width: 400px; /* Largura expandida dos inputs */
+}
+
+/* Estilo do botão */
 .consulta-container form button {
-  background-color: #004A8D; /* Cor do botão de Consulta */
+  background-color: #004a8d; /* Cor do botão de Consultar */
   color: white; /* Cor do texto */
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   width: 200px; /* Largura fixa para o botão */
+  margin-top: 10px; /* Espaçamento acima do botão */
   align-self: center; /* Centraliza horizontalmente */
 }

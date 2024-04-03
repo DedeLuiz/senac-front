@@ -69,3 +69,16 @@ button[type="submit"] {
   margin-top: 20px;
   width: 100%;
 }
+
+
+/* Estilo dos inputs Paciente e Pedólogo */
+form input[type="text"][id="paciente"],
+form input[type="text"][id="podologo"] {
+  transition: width 0.3s ease; /* Transição suave da largura */
+  width: 200px; /* Largura inicial dos inputs de Paciente e Pedólogo */
+}
+
+form input[type="text"][id="paciente"]:focus,
+form input[type="text"][id="podologo"]:focus {
+  width: 400px; /* Largura expandida dos inputs de Paciente e Pedólogo */
+}
