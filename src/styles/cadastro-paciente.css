@@ -21,3 +21,12 @@
   cursor: pointer; /* Alterar cursor para indicar que o elemento é clicável */
 }
 
+/* Estilização para o input de email */
+form input[type="email"] {
+  transition: width 0.3s ease; /* Transição suave da largura */
+  width: 200px; /* Largura inicial dos inputs de email */
+}
+
+form input[type="email"]:focus {
+  width: 400px; /* Largura expandida do input de email quando em foco */
+}

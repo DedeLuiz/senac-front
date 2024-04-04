@@ -48,12 +48,14 @@
     background-color: #004A8D; /* Cor do botão */
   }
   
-  form input[type="text"][id="endereco"] {
+  form input[type="text"][id="endereco"],
+  form input[type="text"][id="email"] {
     transition: width 0.3s ease; /* Transição suave da largura */
     width: 200px; /* Largura inicial dos inputs de nome, endereço e cidade */
   }
 
-  form input[type="text"][id="endereco"]:focus {
+  form input[type="text"][id="endereco"]:focus,
+  form input[type="text"][id="email"]:focus  {
     width: 400px; /* Largura expandida dos inputs de nome, endereço e cidade */
   }
   
