@@ -35,6 +35,7 @@ function CadastroPaciente() {
                                   
             <button className="cadastro-paciente-container" type="button">Cadastrar</button>
             <Link to="/ficha-anamnese" className="ficha-anamnese-button">Ficha Anamnese</Link>
+            <button type="submit">Cancelar</button> {/* Adicione a classe aqui */}
         </form>
 
     </div>

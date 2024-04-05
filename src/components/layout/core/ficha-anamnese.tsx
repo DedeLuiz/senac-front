@@ -1,7 +1,60 @@
 
 import React from 'react';
 
-function FichaAnamnese() {
+import Snackbar from '@mui/material/Snackbar';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+
+function FichaAnamnese(): JSX.Element {
+    const [openSnackbarSalvar, setOpenSnackbarSalvar] = React.useState<boolean>(false);
+    const [snackbarMessageSalvar, setSnackbarMessageSalvar] = React.useState<string>(''); 
+
+    const handleClickSnackbarSalvar = (): void => {
+        setOpenSnackbarSalvar(true);
+        setSnackbarMessageSalvar('Dados salvos com sucesso!');
+    };
+
+    const handleCloseSnackbarSalvar = (event: React.SyntheticEvent | Event, reason?: string): void => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnackbarSalvar(false);
+    };
+
+    const [openSnackbarCancelar, setOpenSnackbarCancelar] = React.useState<boolean>(false);
+    const [snackbarMessageCancelar, setSnackbarMessageCancelar] = React.useState<string>('');
+
+    const handleClickSnackbarCancelar = (): void => {
+        setOpenSnackbarCancelar(true);
+        setSnackbarMessageCancelar('Operação cancelada!');
+    };
+
+    const handleCloseSnackbarCancelar = (event: React.SyntheticEvent | Event, reason?: string): void => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnackbarCancelar(false);
+    };
+
+    const actionSalvar = (
+        <React.Fragment>
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackbarSalvar}>
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </React.Fragment>
+    );
+
+    const actionCancelar = (
+        <React.Fragment>
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackbarCancelar}>
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </React.Fragment>
+    );
+
+
+
     return (
 
 
@@ -391,13 +444,28 @@ function FichaAnamnese() {
                                                         <input type="checkbox" id="teste2n" />
                                                         <p>
 
-                                                        <button className="cadastro-paciente-container" type="button">Salvar</button>
-                                                        <button className="cadastro-paciente-container" type="button">Cancelar Ficha</button>
+                                                        <Button onClick={handleClickSnackbarSalvar} style={{ textTransform: 'none' }}>Salvar</Button>
+                                                        <Button onClick={handleClickSnackbarCancelar} style={{ textTransform: 'none' }}>Cancelar</Button>
 
-                            </p>                            
+                            </p> 
+                            <Snackbar
+                                open={openSnackbarSalvar}
+                                autoHideDuration={6000}
+                                onClose={handleCloseSnackbarSalvar}
+                                message={snackbarMessageSalvar}
+                                action={actionSalvar}
+                            />
+                            <Snackbar
+                                open={openSnackbarCancelar}
+                                autoHideDuration={5000}
+                                onClose={handleCloseSnackbarCancelar}
+                                message={snackbarMessageCancelar}
+                                action={actionCancelar}
+                            />                          
                     </div>
 
                 </form>
+                
     );
 }
 

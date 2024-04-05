@@ -43,7 +43,7 @@ function CadastroProfissional() {
         
         
           <button type="submit">Cadastrar Profissional</button> 
-        
+          <button type="submit">Cancelar</button> {/* Adicione a classe aqui */}
         
 
       </form>

@@ -27,9 +27,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #F7941D;
-}
+
 
 /* Estilos para o layout do formulário */
 form {

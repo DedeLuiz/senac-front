@@ -26,8 +26,9 @@ function Agendamento() {
             <label htmlFor="descricao">Descrição do exame:</label>
             <input type="text" id="descricao" name="descricao" />
 
-            <button type="submit">Agendar</button>
-            
+            <button type="submit" className="agendar-button">Agendar</button>
+            <button type="submit" className="cancel-button">Cancelar</button> {/* Adicione a classe aqui */}
+     
             
       </form>
     </div>

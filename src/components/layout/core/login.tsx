@@ -13,7 +13,8 @@ function Login() {
             <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" required />
             <br />
-            <button type="submit">Login </button> 
+            <button type="submit">Login </button>
+            <button type="submit">Cancelar Login</button> {/* Adicione a classe aqui */} 
         </form>
     </div>
         

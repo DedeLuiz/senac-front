@@ -16,6 +16,7 @@ function ConsultaAgendamento() {
       <input type="text" id="podologo" name="podologo" />
 
       <button type="submit" className="consultar-button">Consultar</button>
+      <button type="submit" className="cancel-button">Cancelar</button> {/* Adicione a classe aqui */}
       
     </form>
   </div>
