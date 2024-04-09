@@ -8,6 +8,7 @@ import CadastroProfissional from "../../../components/layout/core/cadastro-profi
 import ConsultaAgendamento from "../../../components/layout/core/consulta-agendamento";
 import FichaAnamnese from "../../../components/layout/core/ficha-anamnese";
 import PersistentDrawerLeft from "../../../components/layout/core/PersistentDrawerLeft";
+import Inicio from "../../../components/layout/core/inicio"
 
 const router = createBrowserRouter([
         {
@@ -17,6 +18,11 @@ const router = createBrowserRouter([
                 {
                     path: '/home', 
                     element: (<>Essa é a home</>)
+                },
+                
+                {
+                    path: 'inicio', 
+                    element: <Inicio />
                 },
 
                 {

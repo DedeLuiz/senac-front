@@ -160,7 +160,7 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
           {[
-            {texto: 'Início', icon: <HomeIcon sx={{ color: '#fff' }} />, to: "/"}, 
+            {texto: 'Início', icon: <HomeIcon sx={{ color: '#fff' }} />, to: "/inicio"}, 
             {texto: 'Agendamentos', icon: <CalendarMonthIcon sx={{ color: '#fff' }} />, to: "/agendamento"}, 
             {texto: 'Paciente', icon: <HowToRegIcon sx={{ color: '#fff' }} />, action: handleOpenPatientModal}, 
             {texto: 'Perfil', icon: <AccountBoxIcon sx={{ color: '#fff' }} />, to: "/perfil"},
