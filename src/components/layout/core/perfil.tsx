@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function PerfilPaciente() {
-  // Aqui você pode adicionar lógica para carregar os dados do paciente
-  const paciente = {
+interface Paciente {
+  nome: string;
+  idade: number;
+  genero: string;
+  endereco: string;
+  telefone: string;
+  email: string;
+  cpf: string;
+  planoDeSaude: string;
+  numeroCarteirinha: string;
+  historicoMedico: string;
+}
+
+const PerfilPaciente: React.FC = () => {
+  const [imagemPerfil, setImagemPerfil] = useState('');
+  const [paciente, setPaciente] = useState<Paciente>({
     nome: 'Fulano de Tal',
     idade: 30,
     genero: 'Masculino',
@@ -13,20 +26,46 @@ function PerfilPaciente() {
     planoDeSaude: 'Plano de Saúde XYZ',
     numeroCarteirinha: '1234567890',
     historicoMedico: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis commodo urna nec commodo dapibus.',
+  });
+
+  const handleSelectImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImagemPerfil(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSaveImage = () => {
+    // Lógica para salvar a imagem aqui
   };
 
   return (
-    <div>
+    <div style={{ position: 'relative' }}>
+      <div style={{ position: 'absolute', top: 10, right: 10 }}>
+        <img src={imagemPerfil} alt="Imagem de Perfil" style={{ width: 260, height: 300, borderRadius: 5, objectFit: 'cover' }} />
+        <br />
+        <input type="file" accept="image/*" onChange={handleSelectImage} style={{ marginTop: 10, width: 200 }} />
+        <button onClick={handleSaveImage} style={{ marginTop: 10, backgroundColor: '#CCCCCC', color: '#000000', border: 'none', padding: '5px 10px', borderRadius: '5px', height: 33 }}>Salvar Imagem</button>
+      </div>
       <h1>Perfil do Paciente</h1>
       <div>
-        <h2>Dados Pessoais</h2>
-        <p><strong>Nome:</strong> {paciente.nome}</p>
-        <p><strong>Idade:</strong> {paciente.idade}</p>
-        <p><strong>Gênero:</strong> {paciente.genero}</p>
-        <p><strong>Endereço:</strong> {paciente.endereco}</p>
-        <p><strong>Telefone:</strong> {paciente.telefone}</p>
-        <p><strong>E-mail:</strong> {paciente.email}</p>
-        <p><strong>CPF:</strong> {paciente.cpf}</p>
+        <strong>Nome:</strong> {paciente.nome}
+      </div>
+      <div>
+        <strong>CPF:</strong> {paciente.cpf} {' '}
+        <strong>Idade:</strong> {paciente.idade} {' '}
+        <strong>Telefone:</strong> {paciente.telefone} {' '}
+        <strong>Gênero:</strong> {paciente.genero}
+      </div>
+      <div>
+        <strong>Endereço:</strong> {paciente.endereco}
+      </div>
+      <div>
+        <strong>E-mail:</strong> {paciente.email}
       </div>
       <div>
         <h2>Plano de Saúde</h2>
@@ -39,6 +78,6 @@ function PerfilPaciente() {
       </div>
     </div>
   );
-}
+};
 
 export default PerfilPaciente;
