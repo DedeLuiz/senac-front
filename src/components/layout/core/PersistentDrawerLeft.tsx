@@ -22,8 +22,8 @@ import HowToRegIcon from '@mui/icons-material/HowToReg';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { Link, Outlet } from 'react-router-dom';
-import QueryBuilderTwoToneIcon from '@mui/icons-material/QueryBuilderTwoTone';
-import FeedIcon from '@mui/icons-material/Feed';
+    //import QueryBuilderTwoToneIcon from '@mui/icons-material/QueryBuilderTwoTone';
+    //import FeedIcon from '@mui/icons-material/Feed';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PatientAccordionModal from '../../modal/PatientAccordionModal';
 import Modal from '@mui/material/Modal';
@@ -165,8 +165,8 @@ export default function PersistentDrawerLeft() {
             {texto: 'Paciente', icon: <HowToRegIcon sx={{ color: '#fff' }} />, action: handleOpenPatientModal}, 
             {texto: 'Perfil', icon: <AccountBoxIcon sx={{ color: '#fff' }} />, to: "/perfil"},
             {texto: 'Profissional', icon: <PersonAddIcon sx={{ color: '#fff' }} />, to: "/cadastro-profissional"}, 
-            {texto: 'Ficha Anamnese', icon: <FeedIcon sx={{ color: '#fff' }} />, to: "/ficha-anamnese"},   
-            {texto: 'Consulta', icon: <QueryBuilderTwoToneIcon sx={{ color: '#fff' }} />, to: "/consulta-agendamento"},  
+                    //{texto: 'Ficha Anamnese', icon: <FeedIcon sx={{ color: '#fff' }} />, to: "/ficha-anamnese"},   
+                    //{texto: 'Consulta', icon: <QueryBuilderTwoToneIcon sx={{ color: '#fff' }} />, to: "/consulta-agendamento"},  
             {texto: 'Sair', icon: <ExitToAppIcon sx={{ color: '#fff' }} />, to: "/login"}
           ].map((item, index) => (
             <ListItem key={index} disablePadding onClick={item.action}>

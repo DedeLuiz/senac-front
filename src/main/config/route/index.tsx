@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import ResponsiveDrawer from "../../../components/layout/core/ResponsiveDrawer";
+        //import ResponsiveDrawer from "../../../components/layout/core/ResponsiveDrawer";
 import Login from "../../../components/layout/core/login";
 import PerfilPaciente from "../../../components/layout/core/perfil";
 import CadastroPaciente from "../../../components/layout/core/cadastro-paciente";
