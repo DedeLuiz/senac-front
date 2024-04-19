@@ -15,13 +15,13 @@ const router = createBrowserRouter([
             path: '/',
             element: <PersistentDrawerLeft />,
             children: [
-                {
-                    path: '/home', 
-                    element: (<>Essa é a home</>)
-                },
+                //{
+                    //path: '/home', 
+                    //element: (<>Essa é a home</>)
+                //},
                 
                 {
-                    path: 'inicio', 
+                    path: '/inicio', 
                     element: <Inicio />
                 },
 
