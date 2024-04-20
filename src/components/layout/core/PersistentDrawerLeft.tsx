@@ -22,11 +22,12 @@ import HowToRegIcon from '@mui/icons-material/HowToReg';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { Link, Outlet } from 'react-router-dom';
-    //import QueryBuilderTwoToneIcon from '@mui/icons-material/QueryBuilderTwoTone';
-    //import FeedIcon from '@mui/icons-material/Feed';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PatientAccordionModal from '../../modal/PatientAccordionModal';
 import Modal from '@mui/material/Modal';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import { deepOrange } from '@mui/material/colors';
 
 const drawerWidth = 240;
 
@@ -129,6 +130,13 @@ export default function PersistentDrawerLeft() {
           <Typography variant="h6" noWrap component="div">
             Persistent drawer
           </Typography>
+          {/* Adicionando o Avatar à direita */}
+          <Stack direction="row" spacing={2} sx={{ marginLeft: 'auto', alignItems: 'center' }}>
+            <Avatar
+              src="/broken-image.jpg"
+              sx={{ bgcolor: deepOrange[500] }}
+            ></Avatar>
+          </Stack>
         </Toolbar>
       </AppBar>
       <Drawer
