@@ -1,8 +1,58 @@
 // CadastroPaciente.js
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
-function CadastroPaciente() {
+function CadastroPaciente(): JSX.Element {
+  const [openSnackbarSalvar, setOpenSnackbarSalvar] = React.useState<boolean>(false);
+  const [snackbarMessageSalvar, setSnackbarMessageSalvar] = React.useState<string>(''); 
+
+  const handleClickSnackbarSalvar = (): void => {
+      setOpenSnackbarSalvar(true);
+      setSnackbarMessageSalvar('Paciente cadastrado com sucesso!');
+  };
+
+  const handleCloseSnackbarSalvar = (event: React.SyntheticEvent | Event, reason?: string): void => {
+      if (reason === 'clickaway') {
+          return;
+      }
+      setOpenSnackbarSalvar(false);
+  };
+
+  const [openSnackbarCancelar, setOpenSnackbarCancelar] = React.useState<boolean>(false);
+  const [snackbarMessageCancelar, setSnackbarMessageCancelar] = React.useState<string>('');
+
+  const handleClickSnackbarCancelar = (): void => {
+      setOpenSnackbarCancelar(true);
+      setSnackbarMessageCancelar('Cadastro cancelado!');
+  };
+
+  const handleCloseSnackbarCancelar = (event: React.SyntheticEvent | Event, reason?: string): void => {
+      if (reason === 'clickaway') {
+          return;
+      }
+      setOpenSnackbarCancelar(false);
+  };
+
+  const actionSalvar = (
+      <React.Fragment>
+          <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackbarSalvar}>
+              <CloseIcon fontSize="small" />
+          </IconButton>
+      </React.Fragment>
+  );
+
+  const actionCancelar = (
+      <React.Fragment>
+          <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackbarCancelar}>
+              <CloseIcon fontSize="small" />
+          </IconButton>
+      </React.Fragment>
+  );
+
   return (
     <div>
       <h1>Cadastro de Paciente</h1>
@@ -33,9 +83,27 @@ function CadastroPaciente() {
                 <option value="outro">Outro</option>
             </select>
                                   
-            <button className="cadastro-paciente-container" type="button">Cadastrar</button>
+            <Button onClick={handleClickSnackbarSalvar} style={{ textTransform: 'none' }}>Cadastrar Paciente</Button>
             <Link to="/ficha-anamnese" className="ficha-anamnese-button">Ficha Anamnese</Link>
-            <button type="submit">Cancelar</button> {/* Adicione a classe aqui */}
+            <Button onClick={handleClickSnackbarCancelar} style={{ textTransform: 'none' }}>Cancelar</Button> {/* Adicione a classe aqui */}
+
+                              <Snackbar
+                                  open={openSnackbarSalvar}
+                                  autoHideDuration={6000}
+                                  onClose={handleCloseSnackbarSalvar}
+                                  message={snackbarMessageSalvar}
+                                  action={actionSalvar}
+                              />
+                              <Snackbar
+                                  open={openSnackbarCancelar}
+                                  autoHideDuration={5000}
+                                  onClose={handleCloseSnackbarCancelar}
+                                  message={snackbarMessageCancelar}
+                                  action={actionCancelar}
+                              />
+
+
+
         </form>
 
     </div>

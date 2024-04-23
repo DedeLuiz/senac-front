@@ -1,7 +1,56 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
+function CadastroProfissional(): JSX.Element {
+  const [openSnackbarSalvar, setOpenSnackbarSalvar] = React.useState<boolean>(false);
+  const [snackbarMessageSalvar, setSnackbarMessageSalvar] = React.useState<string>(''); 
 
-function CadastroProfissional() {
+  const handleClickSnackbarSalvar = (): void => {
+      setOpenSnackbarSalvar(true);
+      setSnackbarMessageSalvar('Profissional cadastrado com sucesso!');
+  };
+
+  const handleCloseSnackbarSalvar = (event: React.SyntheticEvent | Event, reason?: string): void => {
+      if (reason === 'clickaway') {
+          return;
+      }
+      setOpenSnackbarSalvar(false);
+  };
+
+  const [openSnackbarCancelar, setOpenSnackbarCancelar] = React.useState<boolean>(false);
+  const [snackbarMessageCancelar, setSnackbarMessageCancelar] = React.useState<string>('');
+
+  const handleClickSnackbarCancelar = (): void => {
+      setOpenSnackbarCancelar(true);
+      setSnackbarMessageCancelar('Cadastro cancelado!');
+  };
+
+  const handleCloseSnackbarCancelar = (event: React.SyntheticEvent | Event, reason?: string): void => {
+      if (reason === 'clickaway') {
+          return;
+      }
+      setOpenSnackbarCancelar(false);
+  };
+
+  const actionSalvar = (
+      <React.Fragment>
+          <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackbarSalvar}>
+              <CloseIcon fontSize="small" />
+          </IconButton>
+      </React.Fragment>
+  );
+
+  const actionCancelar = (
+      <React.Fragment>
+          <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackbarCancelar}>
+              <CloseIcon fontSize="small" />
+          </IconButton>
+      </React.Fragment>
+  );
+
   return (
     <div> 
       <h1>Cadastro Profissional</h1>
@@ -42,9 +91,23 @@ function CadastroProfissional() {
           
         
         
-          <button type="submit">Cadastrar Profissional</button> 
-          <button type="submit">Cancelar</button> {/* Adicione a classe aqui */}
+              <Button onClick={handleClickSnackbarSalvar} style={{ textTransform: 'none' }}>Cadastrar Profissional</Button>
+              <Button onClick={handleClickSnackbarCancelar} style={{ textTransform: 'none' }}>Cancelar</Button> {/* Adicione a classe aqui */}
         
+                              <Snackbar
+                                  open={openSnackbarSalvar}
+                                  autoHideDuration={6000}
+                                  onClose={handleCloseSnackbarSalvar}
+                                  message={snackbarMessageSalvar}
+                                  action={actionSalvar}
+                              />
+                              <Snackbar
+                                  open={openSnackbarCancelar}
+                                  autoHideDuration={5000}
+                                  onClose={handleCloseSnackbarCancelar}
+                                  message={snackbarMessageCancelar}
+                                  action={actionCancelar}
+                              />
 
       </form>
     </div>
