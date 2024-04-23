@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Button from '@mui/material/Button';
 
 interface Paciente {
   nome: string;
@@ -44,38 +48,60 @@ const PerfilPaciente: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      <div style={{ position: 'absolute', top: 10, right: 10 }}>
-        <img src={imagemPerfil} alt="Imagem de Perfil" style={{ width: 260, height: 300, borderRadius: 5, objectFit: 'cover' }} />
-        <br />
-        <input type="file" accept="image/*" onChange={handleSelectImage} style={{ marginTop: 10, width: 200 }} />
-        <button onClick={handleSaveImage} style={{ marginTop: 10, backgroundColor: '#CCCCCC', color: '#000000', border: 'none', padding: '5px 10px', borderRadius: '5px', height: 33 }}>Salvar Imagem</button>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ flex: 1 }}>
+        <h1>Perfil do Paciente</h1>
+        <div>
+          <strong>Nome:</strong> {paciente.nome}
+        </div>
+        <div>
+          <strong>CPF:</strong> {paciente.cpf} {' '}
+          <strong>Idade:</strong> {paciente.idade} {' '}
+          <strong>Telefone:</strong> {paciente.telefone} {' '}
+          <strong>Gênero:</strong> {paciente.genero}
+        </div>
+        <div>
+          <strong>Endereço:</strong> {paciente.endereco}
+        </div>
+        <div>
+          <strong>E-mail:</strong> {paciente.email}
+        </div>
+        <div>
+          <h2>Plano de Saúde</h2>
+          <p><strong>Plano:</strong> {paciente.planoDeSaude}</p>
+          <p><strong>Número da Carteirinha:</strong> {paciente.numeroCarteirinha}</p>
+        </div>
+        <div>
+          <h2>Historico Médico</h2>
+          <p>{paciente.historicoMedico}</p>
+        </div>
       </div>
-      <h1>Perfil do Paciente</h1>
-      <div>
-        <strong>Nome:</strong> {paciente.nome}
-      </div>
-      <div>
-        <strong>CPF:</strong> {paciente.cpf} {' '}
-        <strong>Idade:</strong> {paciente.idade} {' '}
-        <strong>Telefone:</strong> {paciente.telefone} {' '}
-        <strong>Gênero:</strong> {paciente.genero}
-      </div>
-      <div>
-        <strong>Endereço:</strong> {paciente.endereco}
-      </div>
-      <div>
-        <strong>E-mail:</strong> {paciente.email}
-      </div>
-      <div>
-        <h2>Plano de Saúde</h2>
-        <p><strong>Plano:</strong> {paciente.planoDeSaude}</p>
-        <p><strong>Número da Carteirinha:</strong> {paciente.numeroCarteirinha}</p>
-      </div>
-      <div>
-        <h2>Historico Médico</h2>
-        <p>{paciente.historicoMedico}</p>
-      </div>
+      <Stack direction="column" alignItems="center" spacing={4} sx={{ marginRight: '100px' }}>
+        {imagemPerfil ? (
+          <Avatar alt="Imagem de Perfil" src={imagemPerfil} sx={{ width: 200, height: 200 }} />
+        ) : (
+          <>
+            <input type="file" accept="image/*" onChange={handleSelectImage} style={{ display: 'none' }} id="avatar-input" />
+            <label htmlFor="avatar-input">
+              <Avatar alt="Upload Image" sx={{ backgroundColor: 'white/black', width: 200, height: 200 }}>
+                {imagemPerfil ? null : <AccountCircleIcon style={{ fontSize: 200 }} />}
+              </Avatar>
+            </label>
+          </>
+        )}
+        <Stack direction="row" spacing={2}>
+          {imagemPerfil && (
+            <>
+              <Button variant="contained" onClick={handleSaveImage}>
+                Salvar Foto
+              </Button>
+              <Button variant="outlined" onClick={() => setImagemPerfil('')}>
+                Cancelar
+              </Button>
+            </>
+          )}
+        </Stack>
+      </Stack>
     </div>
   );
 };
