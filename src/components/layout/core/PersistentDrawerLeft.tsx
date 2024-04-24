@@ -134,7 +134,7 @@ export default function PersistentDrawerLeft() {
           <Stack direction="row" spacing={2} sx={{ marginLeft: 'auto', alignItems: 'center' }}>
             <Avatar
               src="/broken-image.jpg"
-              sx={{ bgcolor: deepOrange[500] }}
+              sx={{ bgcolor: '#F7941D' }}
             ></Avatar>
           </Stack>
         </Toolbar>
